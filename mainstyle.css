@@ -1,0 +1,30 @@
+h1 {
+	font-family: Arial;
+	font-weight: bold;
+	color: Red;
+	padding: 30px;
+
+	}
+	
+p {
+	color: Green;
+	padding: 5px;
+
+	}
+
+body {
+  background-color: linen;
+}
+
+h2 {
+	margin-left: 20px;
+	color: Green;
+	padding: 10px;
+	
+	}
+	
+li {
+	width: 90px;
+	padding: 10px;
+	box-shadow: 3px 3px 1px grey;
+	}
