@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Tooltip - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+
+body {background-color: #f5f5dc;}
+ 
+input.r {text-align: right;} 
+
+p {text-align: center;}
+
+label {
+    display: inline-block;
+    width:6em;
+ 
+    
+  	
+
+</style>
+
+
+<script>
+
+
+	//create and initialize variables 
+	var  s1, s2, s3, s4, sb1, sb2, sb3, sb4, totalSal, totalBon, totalErn;
+        sb1 = 0;
+        sb2 = 0;
+        sb3 = 0;
+        sb4 = 0;
+        totalSal = 0;
+        totalErn = 0;
+
+        //output table via document.write statements
+
+    document.write("<div align=\"center\">");
+
+    document.write("<form name='myform'>");
+
+    document.write("<table border=\"1\">")
+
+    document.write("<tr><th align=\"center\" colspan=\"4\">Salespeople</th></tr>")
+
+    document.write("<tr><th>Items</th><th>Value</th><th>Item Sold</th><th>Results</th></tr>")
+ 
+
+//Note that employee name input field is preset with disabled attribute
+
+document.write("<tr><td><input type=\"text\" disabled=\"disabled\" value=\"1\"  size=\"20\"></td> <td><input type=\"text\" disabled=\"disabled\" value=\"20.99\" size=\"20\"></td></td><td><input type=\"text\" autofocus name=\"sal1\" class=\"r\" /></td><td><input type=\"text\" disabled=\"disabled\" name=\"salbon1\" class=\"r\" size=\"20\"></td></tr>");
+
+
+document.write("<tr><td><input type=\"text\" disabled=\"disabled\" value=\"2\"  size=\"20\"></td> <td><input type=\"text\" disabled=\"disabled\" value=\"12.75\"  size=\"20\"></td><td><input type=\"text\" name=\"sal2\"  class=\"r\" /></td><td><input type=\"text\" disabled=\"disabled\" name=\"salbon2\" class=\"r\" size=\"20\"></td></tr>");
+
+document.write("<tr><td><input type=\"text\" disabled=\"disabled\" value=\"3\"  size=\"20\"></td> <td><input type=\"text\" disabled=\"disabled\" value=\"9.95\"  size=\"20\"></td><td><input  type=\"text\" name=\"sal3\" class=\"r\" /></td><td><input type=\"text\" disabled=\"disabled\" name=\"salbon3\" class=\"r\" size=\"20\"></td></tr>");
+
+document.write("<tr><td><input type=\"text\" disabled=\"disabled\" value=\"4\"  size=\"20\"></td> <td><input type=\"text\" disabled=\"disabled\" value=\"35.89\"  size=\"20\"></td><td><input  type=\"text\" name=\"sal4\" class=\"r\" /></td><td><input type=\"text\" disabled=\"disabled\" name=\"salbon4\" class=\"r\" size=\"20\"></td></tr>");
+
+
+document.write("<tr><td><input type=\"text\" disabled=\"disabled\"   size=\"20\"></td> <td>Totals</td><td><input  type=\"text\" disabled=\"disabled\" name=\"totsal\" class=\"r\"></td><td><input type=\"text\" disabled=\"disabled\" name=\"totbon\" class=\"r\" size=\"20\"></td></tr>");
+
+document.write("<tr><td><input type=\"text\" disabled=\"disabled\"   size=\"20\"></td> <td><input type=\"text\" disabled=\"disabled\"   size=\"20\"></td> <td>Totals + 250</td> <td><input type=\"text\" disabled=\"disabled\" name=\"totern\" class=\"r\" size=\"20\"></td></tr>");
+
+document.write("</table><br />");
+
+document.write("<input type=\"button\" value='Calculate' onclick=\"process()\">");
+document.write("<input type=\"reset\" value=\"Reset\" size=\"10\">");
+
+document.write("</form>");
+
+document.write("</div>");
+
+function process()
+{
+
+	//set the variables to various fields in the form
+
+	s1 = parseFloat(document.forms["myform"].elements["sal1"].value);
+        s2 = parseFloat(document.forms["myform"].elements["sal2"].value);
+        s3 = parseFloat(document.forms["myform"].elements["sal3"].value);
+        s4 = parseFloat(document.forms["myform"].elements["sal4"].value);
+
+
+
+        //add 100 bonus to each salary
+        sb1 = s1 * (20.99);
+        sb2 = s2 * (12.75);
+        sb3 = s3 * (9.95);
+        sb4 = s4 * (35.89);
+
+        //calculate total annual salaries and total bonuses for all employees
+        totalSal = s1 + s2 + s3 + s4;
+        totalBon = (sb1 + sb2 + sb3 + sb4) * .09;
+        totalErn = totalBon + 250;
+           
+
+  document.forms["myform"].elements["salbon1"].value = sb1.toFixed(2);
+  document.forms["myform"].elements["salbon2"].value = sb2.toFixed(2);
+  document.forms["myform"].elements["salbon3"].value = sb3.toFixed(2);
+  document.forms["myform"].elements["salbon4"].value = sb4.toFixed(2);
+
+  document.forms["myform"].elements["totsal"].value = totalSal.toFixed(2);
+  document.forms["myform"].elements["totbon"].value = totalBon.toFixed(2);
+  document.forms["myform"].elements["totern"].value = totalErn.toFixed(2);
+
+      
+}
+
+$( function() {
+    $( document ).tooltip();
+  } );
+  
+
+
+</script>
+
+</head>
+
+<body>
+
+		<nav>
+			<ul>
+				<li><a href="hw1.html">Return HOME</a></li>
+			</ul>
+		</nav>
+<h1> Homework 3 Part 2 </h1>
+ 
+
+<p><label id="age">Salesperson:</label><input id="name" title="Please make sure that the salesperson's name is spelled correctly."></p>
+ 
+</body>
+</html>
