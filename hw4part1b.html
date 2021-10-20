@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+<meta charset="utf-8">
+<meta name="description" content="exercise using for statement">
+<title>Example using for</title>
+
+<!-- jQuery UI CSS file, jQuery .js file, and jQuery UI .js file -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<style>
+body {background-color:#f5f5dc;}
+
+.content {
+	width:400px;
+	margin: 0px auto; padding: 15px;
+        text-align: left; /* Counteract to IE/Win Hack */	
+	background-color:#ffffff;
+         }   
+</style>
+
+<script>
+$(function() {
+   $( "#draggable" ).draggable();
+});
+</script>
+
+</head>
+<body>
+
+<section>
+<div class="content">
+
+<h2>for statement</h2>
+
+<script>
+
+//This is a while statement
+
+
+                       
+    var product, sum, x;
+          product = 1;
+          x = 5;
+          sum = 0;	
+		
+         while   (x <= 25 ) {
+	      product *= x;
+              sum += x;
+	      x = x + 4;		
+                            }
+         document.write( "<h2>While loop - from 5 to 25</h2>" );
+         document.write( "<br>The Product of the numbers from 5 to 25 inclusive is " + product.toLocaleString() + "<br>");
+         document.write( "<br>The Sum of the numbers from 5 to 25 inclusive is " + sum);
+</script>
+
+
+<h3>This is Part A #2</h3>
+		<nav>
+			<ul>
+				<li><a href="hw1.html">Return HOME</a></li>
+			</ul>
+		</nav>
+
+<div id="draggable">
+<p>This is a draggable div</p>
+</div>
+
+</div>  <!-- end of main div -->
+</section>
+
+</body>
+</html>
