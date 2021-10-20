@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+<meta charset="utf-8">
+<meta name="description" content="exercise using for statement">
+<title>Example using for</title>
+
+<!-- jQuery UI CSS file, jQuery .js file, and jQuery UI .js file -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<style>
+body {background-color:#f5f5dc;}
+
+.content {
+	width:400px;
+	margin: 0px auto; padding: 15px;
+        text-align: left; /* Counteract to IE/Win Hack */	
+	background-color:#ffffff;
+         }   
+</style>
+
+<script>
+$(function() {
+   $( "#draggable" ).draggable();
+});
+</script>
+
+</head>
+<body>
+
+<section>
+<div class="content">
+
+<h2>For statement</h2>
+
+<script>
+
+  var product = 1;
+  
+  
+  
+  for ( var number = 5; number<= 25; number += 4)
+  {
+  	product *= number;
+  }
+
+	
+  var sum = 0;
+
+  for ( var number = 5; number <= 25; number += 4 )
+  { 
+     sum += number;
+  }
+  
+  
+  
+  document.write( "The product of 5, 9, 13, 17, 21 and 25 integers " +  "from 5 to 25 inclusive is " +
+                       product.toLocaleString() + "<br>");
+                       
+  document.write( "The sum of 5, 9, 13, 17, 21 and 25 integers " +  "from 5 to 25 inclusive is " +
+                       sum ); 
+</script>
+
+<h3>This is Part A #1</h3>
+		<nav>
+			<ul>
+				<li><a href="hw1.html">Return HOME</a></li>
+			</ul>
+		</nav>
+
+<div id="draggable">
+<p>This is a draggable div</p>
+</div>
+
+</div>  <!-- end of main div -->
+</section>
+
+</body>
+</html>
